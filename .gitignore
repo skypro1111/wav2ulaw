@@ -51,3 +51,11 @@ wheels/
 .Trashes
 ehthumbs.db
 Thumbs.db 
+
+# Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+/releases
