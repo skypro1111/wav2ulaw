@@ -195,7 +195,7 @@ TEST_CONFIGS = [
             'normalize': 0.95,
             'compression_ratio': 1.2,
             'compression_threshold': 0.5,
-            'window_size': 8,        # Faster processing
+            'window_size': 12,        # Faster processing
             'anti_aliasing_ratio': 0.8,  # Faster
             'anti_aliasing_type': AA_SIMPLE,  # Fastest
             'filter_order': 2,
@@ -212,7 +212,7 @@ TEST_CONFIGS = [
             'normalize': 0.98,
             'compression_ratio': 1.3,
             'compression_threshold': 0.6,
-            'window_size': 16,       # Better quality
+            'window_size': 24,       # Better quality
             'anti_aliasing_ratio': 0.98,
             'anti_aliasing_type': AA_BESSEL,  # Better shape
             'filter_order': 4,
@@ -229,7 +229,7 @@ TEST_CONFIGS = [
             'normalize': 0.99,
             'compression_ratio': 1.2,
             'compression_threshold': 0.7,
-            'window_size': 24,       # Best quality
+            'window_size': 128,       # Best quality
             'anti_aliasing_ratio': 0.99,
             'anti_aliasing_type': AA_BUTTERWORTH,  # Best response
             'filter_order': 6,

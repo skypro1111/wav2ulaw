@@ -470,9 +470,9 @@ func ConvertWavBytesToUlaw(wavBytes []byte, config *AudioConfig) ([]byte, error)
 	// Apply anti-aliasing filter before resampling
 	samples = applyAntiAliasingFilter(samples, float64(inputSampleRate), 8000, config)
 
-	// Resample to 8kHz
+	// Resample to 8kHz using optimized function
 	if inputSampleRate != 8000 {
-		samples = resamplePCM16(samples, float64(inputSampleRate), 8000, config.ResamplingWindowSize)
+		samples = resamplePCM16WithTable(samples, float64(inputSampleRate), 8000, config.ResamplingWindowSize)
 	}
 
 	// Apply volume processing after resampling
