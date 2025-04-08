@@ -66,7 +66,17 @@ pip install soundfile numpy
 ## Python Usage Example
 
 ```python
-from wav2ulaw import wav_to_ulaw, AA_BUTTERWORTH
+import subprocess
+import tempfile
+import os
+import soundfile as sf
+from play_ulaw import play_ulaw
+
+# Anti-aliasing filter types
+AA_SIMPLE = 0      # Simple low-pass filter
+AA_BUTTERWORTH = 1 # Butterworth filter (flattest frequency response)
+AA_BESSEL = 2      # Bessel filter (best signal shape preservation)
+AA_CHEBYSHEV = 3   # Chebyshev Type I filter (steepest roll-off)
 
 # Read your TTS-generated WAV file
 with open('tts_output.wav', 'rb') as f:
@@ -88,6 +98,9 @@ ulaw_data = wav_to_ulaw(
 # Save the result
 with open('output.ulaw', 'wb') as f:
     f.write(ulaw_data)
+
+# Optional: Play the result
+play_ulaw(ulaw_data, sample_rate=44100, window_size=12)
 ```
 
 ## Optimization Profiles
